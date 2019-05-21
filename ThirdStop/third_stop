@@ -1,0 +1,95 @@
+#!/usr/bin/env bash
+
+message=$(cat << "EOF"
+
+ ▄▄▄▄▄▄▄▄▄▄▄  ▄         ▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄        ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄ 
+▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░▌      ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌
+ ▀▀▀▀█░█▀▀▀▀ ▐░▌       ▐░▌ ▀▀▀▀█░█▀▀▀▀ ▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌     ▐░█▀▀▀▀▀▀▀▀▀  ▀▀▀▀█░█▀▀▀▀ ▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌
+     ▐░▌     ▐░▌       ▐░▌     ▐░▌     ▐░▌       ▐░▌▐░▌       ▐░▌     ▐░▌               ▐░▌     ▐░▌       ▐░▌▐░▌       ▐░▌
+     ▐░▌     ▐░█▄▄▄▄▄▄▄█░▌     ▐░▌     ▐░█▄▄▄▄▄▄▄█░▌▐░▌       ▐░▌     ▐░█▄▄▄▄▄▄▄▄▄      ▐░▌     ▐░▌       ▐░▌▐░█▄▄▄▄▄▄▄█░▌
+     ▐░▌     ▐░░░░░░░░░░░▌     ▐░▌     ▐░░░░░░░░░░░▌▐░▌       ▐░▌     ▐░░░░░░░░░░░▌     ▐░▌     ▐░▌       ▐░▌▐░░░░░░░░░░░▌
+     ▐░▌     ▐░█▀▀▀▀▀▀▀█░▌     ▐░▌     ▐░█▀▀▀▀█░█▀▀ ▐░▌       ▐░▌      ▀▀▀▀▀▀▀▀▀█░▌     ▐░▌     ▐░▌       ▐░▌▐░█▀▀▀▀▀▀▀▀▀ 
+     ▐░▌     ▐░▌       ▐░▌     ▐░▌     ▐░▌     ▐░▌  ▐░▌       ▐░▌               ▐░▌     ▐░▌     ▐░▌       ▐░▌▐░▌          
+     ▐░▌     ▐░▌       ▐░▌ ▄▄▄▄█░█▄▄▄▄ ▐░▌      ▐░▌ ▐░█▄▄▄▄▄▄▄█░▌      ▄▄▄▄▄▄▄▄▄█░▌     ▐░▌     ▐░█▄▄▄▄▄▄▄█░▌▐░▌          
+     ▐░▌     ▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░░░░░░░░░░▌      ▐░░░░░░░░░░░▌     ▐░▌     ▐░░░░░░░░░░░▌▐░▌          
+      ▀       ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀         ▀  ▀▀▀▀▀▀▀▀▀▀        ▀▀▀▀▀▀▀▀▀▀▀       ▀       ▀▀▀▀▀▀▀▀▀▀▀  ▀           
+                                                                                                                          
+
+****************************************************************************************************
+"Do not try and bend the spoon. That's impossible. Instead... only try to realize the truth."
+
+Someone incepted the password for the next stop in one of these directories.
+It sure would take a long time to look through all of them. There has to be a better way...
+
+Even once you have the credentials (which are correct), you might have trouble logging into the 
+Forth Stop. Perhaps they are blocking your IP?
+
+Helpful commands: grep, find, cat, man, nmap
+
+****************************************************************************************************
+
+EOF
+)
+
+  cd /home/james
+
+  echo "$message" > message
+  chmod 404 message
+  echo 'cat message' >> .bashrc
+
+  echo "23c3a104" > flag
+  chmod 400 flag
+  chown james:james flag
+
+  # create & authorize ssh public key. delete players password
+  echo -e "-----BEGIN RSA PRIVATE KEY-----
+MIIEpQIBAAKCAQEAoQGixMO5p0mNWSrInd6hawbZQ8gmaphhnRAHJoMNje3VRgSG
+msoQQkmH4zjgdKon4G1FM/b6FqXPPFbl/xI0XDTkDErdgqGNq4UcffFtKoMztgm6
+etBvOFyi8ZIIKh7r8xf0g/Dj3YnGwn+5FIDmsyB/SlcDUKtYJ3PA7zXlrHEN+cDO
+yoc9clYLzvhh45MDlrfKj1U0gQqH7iCXZdbUxEUB6RUo637MHsAmB9OPxTeZ9Ccm
+Kw/EYNjrokfbVJJIDFOWBbIPpj4cuD5zpCaGlxwLMKgTROfRParDSYLGl+qq0m/Q
+vBCpv3mOhKItp3Yeq042OqMOo1VTMbqVQMTr6wIDAQABAoIBAQCMdLTeGjDXcx7P
+7rbcod8HUw4uR2jcDNr6/YR/YExuyFAJqOEUH7pXWXYmDvQgUmA/NJPuZUJ+h19m
+MBisj+EFn05iOt1KnEzOmGzmobquH474+zum8DZWYNn1C4P72sXTZ85zW64tEYhH
+HM0Eyf53vZ3N6GKH+TIKGLzy8X3PE97HcLD3WuBZMVdpWgeXesEgNg9UBCrwkT6A
+nYRLPQAGOps8AWXY9useP5ot5h3aTn0POl8nrmYqMIagPwAeGrOPqfUfQ6oFej/F
+VhkwrgBxc1T4b0EZV7JkUGcbsZulCmG51wMN6Upv4vnZAcE4AzkT9FTNPxWPvDVy
+9mmD94vBAoGBANHQakv7AN5RmWK4tAmE1bPTml0LkrXDPJ00+A42Bzy4oOdxO2yY
+9o4gzQiRISL1UoOvkOmBbYPeeDxcIeilbqKmfZIeMmFd5MelVeLFmscOtcvP3A7J
+mV/i8NDrAJsYr4aecXpGNTZxeORXQTeXTytM6jexwgu1nlAPog+2FYgZAoGBAMRy
+xlzNt3Ldhx9JYM0kZK+XBaTr7n0k4W0NZJ9tvasfvj8n5MKrkE06mgGx8d3PUfhQ
+MhYuT37auE0MIK45TxcjnNuwXZc1U4824g2NZTeFKJZodje0PdKcP+wwgppMtptG
+BsUOS4j4uP7guNb/a+J7geJV/qQvdS87wz7xweSjAoGBAJkmxtCbcbDWY15acKCa
+I9vV09GjRv4Ce1ZNedv1uCasplcKolPM+/wXGVLtjQCVjhutpdusrCIb3CxDHEVT
+rIRxfyuPezrzbLIGj8CueSJgLHePTJRGt/v0DdCSGakcxdNACJk2clVBUvtqbaKE
+gjebN0RcLsaZVewe3S8WvHTRAoGAFyQOCdCR044U5LKYHJI06ho4J/1C0qsNgvMY
+707WENpkZrwkTmo3TWGh0qFLhH1vgniv7bz20FKjczACiYNmtasURyy3WaCGf1BP
+wJjvW2LsLQuRIW6x+aU+QmxUdiijOhc9pOjSLQhfgmamX20nID68RhUrMdwFSdMY
+ZMnFtVECgYEAoowaVxru4+jvhlucf6P01sCtJ4YlLmjPHdPPK5YX2YG0ls65m2QM
+2FpgeoxIisziE0BuFSYhpr5UUvcWkIzVGeHpEy7tJt6Kzt/4UGwit5+JB1/KbJ1e
+SN/7696tnyEZjvRmm8bf1C8XDJXxiI+uI62WdphxnHHKJoPoPuj5iYg=
+-----END RSA PRIVATE KEY-----
+" > id_rsa
+  chmod 400 id_rsa
+  ssh-keygen -y -f id_rsa > id_rsa.pub -N ''
+  mkdir -p .ssh
+  cat id_rsa.pub > .ssh/authorized_keys
+  rm id_rsa id_rsa.pub
+  passwd -d james
+
+  # do directories
+  for i in {1..100}; do
+    mkdir dir$i
+    cd dir$i
+    mySeedNumber=$$`date +%N`; # seed will be the pid + nanoseconds
+    myRandomString=$( echo $mySeedNumber | md5sum | md5sum );
+    # create our actual random string
+    myRandomResult="${myRandomString:2:100}"
+    echo $myRandomResult > file.txt
+    cd ..
+    chown -R james:james dir$i
+  done
+  cd dir`shuf -i 1-100 -n 1`
+  echo "the password is 7035efa5, and the ip address is 10.0.0.16" > file.txt
+  chmod 400 file.txt
+  chown james:james file.txt

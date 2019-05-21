@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+
+message=$(cat << "EOF"
+ ___________    ___________                                                                  ______                
+|            | |            `````|````` |         |                    ..'''' `````|`````  .~      ~.  |`````````, 
+|______      | |______           |      |_________|                 .''            |      |          | |'''''''''  
+|            | |                 |      |         |              ..'               |      |          | |           
+|            | |                 |      |         |        ....''                  |       `.______.'  |           
+                                                                                                                   
+
+****************************************************************************************************
+"The ecstasy that blooms in synapses is Paprika-brand milk fat! 5% is the norm.
+The safety net of the ocean is nonlinear, even with what crabs dream of! Lets go!"
+
+Decode the file 'betcha_cant_read_me' to find your way to the ultimate challenge... SATAN'S PALACE
+
+****************************************************************************************************
+
+EOF
+)
+  cd /home/james
+
+  echo "$message" > message
+  chown james:james message
+  chmod 400 message
+  echo 'cat message' >> .bashrc
+
+  echo -e "95541890\\n95541890" | passwd james
+
+  echo "You found me. Good job. The next challenge will not be so easy. You will find Satans Palace on the host with a certain open port. The most evil open port. SSH to that port with the password '52efb7de'. The final treasure awaits..." | base64 > betcha_cant_read_me
+
+  chown james:james betcha_cant_read_me
+  chmod 400 betcha_cant_read_me
+
+  echo "20bda216" > flag
+  chown james:james flag
+  chmod 400 flag

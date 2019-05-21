@@ -1,0 +1,99 @@
+version: '3.5'
+services:
+  NAT:
+    build: ./NAT
+    image: nat
+    hostname: NAT
+    ports:
+      - '22'
+    cap_add:
+      - NET_ADMIN
+    networks:
+      SubnetNAT:
+        ipv4_address: 10.0.1.2
+      PlayerSubnet:
+        ipv4_address: 10.0.0.2
+  StartingLine:
+    build: ./StartingLine
+    image: startingline
+    hostname: StartingLine
+    cap_add:
+      - NET_ADMIN
+    networks:
+      PlayerSubnet:
+        ipv4_address: 10.0.0.5
+  FirstStop:
+    build: ./FirstStop
+    image: firststop
+    hostname: FirstStop
+    cap_add:
+      - NET_ADMIN
+    networks:
+      PlayerSubnet:
+        ipv4_address: 10.0.0.7
+  SecondStop:
+    build: ./SecondStop
+    image: secondstop
+    hostname: SecondStop
+    cap_add:
+      - NET_ADMIN
+    networks:
+      PlayerSubnet:
+        ipv4_address: 10.0.0.10
+  ThirdStop:
+    build: ./ThirdStop
+    image: thirdstop
+    hostname: ThirdStop
+    cap_add:
+      - NET_ADMIN
+    networks:
+      PlayerSubnet:
+        ipv4_address: 10.0.0.13
+  FourthStop:
+    build: ./FourthStop
+    image: fourthstop
+    hostname: FourthStop
+    cap_add:
+      - NET_ADMIN
+    networks:
+      PlayerSubnet:
+        ipv4_address: 10.0.0.16
+  FifthStop:
+    build: ./FifthStop
+    image: fifthstop
+    hostname: FifthStop
+    cap_add:
+      - NET_ADMIN
+    networks:
+      PlayerSubnet:
+        ipv4_address: 10.0.0.17
+  SatansPalace:
+    build: ./SatansPalace
+    image: satanspalace
+    hostname: SatansPalace
+    cap_add:
+      - NET_ADMIN
+    networks:
+      PlayerSubnet:
+        ipv4_address: 10.0.0.19
+  AnonFTP:
+    build: ./AnonFTP
+    image: anonftp
+    cap_add:
+      - NET_ADMIN
+    networks:
+      PlayerSubnet:
+        ipv4_address: 10.0.0.14
+networks:
+  SubnetNAT:
+    driver: bridge
+    internal: false
+    ipam:
+      config:
+        - subnet: 10.0.1.0/27
+  PlayerSubnet:
+    driver: bridge
+    internal: true
+    ipam:
+      config:
+        - subnet: 10.0.0.0/27

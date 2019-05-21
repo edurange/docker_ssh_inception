@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Adding users to FirstStop
+
+useradd \
+      --home-dir /home/james \
+      --create-home \
+      --shell /bin/bash \
+      --password $(echo s00p3rs3cr37 | openssl passwd -1 -stdin) \
+      james
